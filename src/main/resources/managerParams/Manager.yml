@@ -1,0 +1,51 @@
+# 目前key不支持数字类型,输入的格式规范也要注意
+a:  #eg
+  b:
+    c:
+      d: hahah
+      e: heheh
+      f: heiheihei
+g: xixixi  #eg
+
+login:
+  url: https://test-manager.zhongfuyun.com/api/login
+  method: POST
+  headers:
+    content-type: multipart/form-data; boundary=----WebKitFormBoundary4LkcLZBR0NQnj6WS
+  params:
+    username: "admin"
+    password: "123456"
+
+
+demand_create: #测试场景
+  url: https://test-manager.zhongfuyun.com/api/demand/save #接口地址
+  method: POST #请求方法
+  headers:
+    content-type: multipart/form-data; boundary=----WebKitFormBoundaryJtg6MAyiGs6gAVZl
+    authorization: 6a4deaae9e6ac5e15cfc1a07374d311b
+  params:  #传参(json)
+    {
+      "shop_id": 287,
+      "shop_sn": "E0010000150287",
+      "location": {"type":"Point","coordinates":[116.306295,40.053034]},
+      "label_id": 55,
+      "label_name": "分拣员",
+      "info": 1,
+      "price_b": 22,
+      "price_c": 22,
+      "person_num": 1,
+      "hours": 3,
+      "address": "(在建)昌平线南延线;13号线;昌平线",
+      "area_id": 139,
+      "city_id": 1,
+      "business_id": 150,
+      "industry": 1,
+      "start_date": "2021-04-30",
+      "start_time": 0,
+      "end_time": 3,
+      "period": 1
+    }
+
+
+
+
