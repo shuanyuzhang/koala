@@ -16,7 +16,6 @@ login:
     username: "admin"
     password: "123456"
 
-
 demand_create: #测试场景
   url: https://test-manager.zhongfuyun.com/api/demand/save #接口地址
   method: POST #请求方法
@@ -45,6 +44,12 @@ demand_create: #测试场景
       "end_time": 3,
       "period": 1
     }
+
+cancel_task:
+  url: https://test-manager.zhongfuyun.com/api/task/cancel
+  params:
+    sn: TB032200074946
+    reason_id: 16
 
 
 

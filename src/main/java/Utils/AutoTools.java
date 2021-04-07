@@ -9,7 +9,7 @@ import java.util.Map;
  * @date 2021/4/5 19:11
  */
 public class AutoTools {
-    public static Object setApiEntity(String apiPath){
+    public static String setApiEntity(String apiPath){
         try {
             String ss[] = apiPath.split("\\.");//后续优化
             //if(ss.length == 2){ //后续优化
@@ -20,6 +20,8 @@ public class AutoTools {
                     header = YamlReader.instance.getValueByKey(apiPath,"demand_create.headers.authorization").toString();
                 }
 
+            /*System.out.println("url: "+url+"\n"+"header: "+header);
+            System.out.println("map: "+map);*/
             return HttpMethods.doPost(url,map,header);
         } catch (Exception e) {
             e.printStackTrace();
