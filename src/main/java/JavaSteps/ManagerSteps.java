@@ -5,7 +5,9 @@ import Utils.AutoTools;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
 
-public class ManagerSteps extends HttpMethods {
+import java.util.Map;
+
+public class ManagerSteps {
     /*String result = null;
     MapList ml = new MapList();
 
@@ -17,9 +19,9 @@ public class ManagerSteps extends HttpMethods {
 
 
     @When("case: (.*) api: (.*) assert: (.*)")
-    public void HttpExcute(String stepName, String apiPath,String params) {
+    public void HttpExcute(String stepName, String apiPath, String params, Map map) {
         //System.out.println(stepName+" he "+YamlReader.instance.getValueByKey(apiPath)+" he "+params);
-        Assert.assertEquals("","params");//
+        //Assert.assertEquals("","params");//
         System.out.println(AutoTools.setApiEntity(apiPath).toString().toString());
     }
 }

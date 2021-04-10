@@ -86,6 +86,5 @@ public class YamlReader {
             System.out.println("v = "+serverHost.get(o));
         }
 
-        //System.out.println(serverHost);
     }
 }
