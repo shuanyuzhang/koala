@@ -1,10 +1,7 @@
 package JavaSteps;
 
 import HttpApi.HttpMethods;
-import HttpApi.MapList;
-import HttpApi.ApiPath;
 import Utils.AutoTools;
-import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
 

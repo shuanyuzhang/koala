@@ -10,7 +10,6 @@ import java.util.Map;
 public class MapList {
     Map<String,String> map = new HashMap<>();
 
-
     public Map<String,String> loginMap(String host){
         if(host.startsWith("test_")){
             System.out.println(host);
