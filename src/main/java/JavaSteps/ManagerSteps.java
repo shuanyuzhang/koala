@@ -8,14 +8,6 @@ import org.junit.Assert;
 import java.util.Map;
 
 public class ManagerSteps {
-    /*String result = null;
-    MapList ml = new MapList();
-
-    @Then("需求创建{string}{string}{string}")
-    public void demandSave(String shopid, String shopsn, String labelid) {
-        String result = doPost(ApiPath.DEMANDSAVE,ml.demandSaveMap(shopid,shopsn,labelid),getToken());
-        System.out.println(result);
-    }*/
 
 
     @When("case: (.*) api: (.*) assert: (.*)")
@@ -23,5 +15,11 @@ public class ManagerSteps {
         //System.out.println(stepName+" he "+YamlReader.instance.getValueByKey(apiPath)+" he "+params);
         //Assert.assertEquals("","params");//
         System.out.println(AutoTools.setApiEntity(apiPath).toString().toString());
+        /*for(Object s : map.entrySet()){
+            System.out.println(s);
+        }*/
+
+
+        System.out.println("params = "+params);
     }
 }

@@ -20,8 +20,8 @@ public class AutoTools {
                     header = YamlReader.instance.getValueByKey(apiPath,"demand_create.headers.authorization").toString();
                 }
 
-            /*System.out.println("url: "+url+"\n"+"header: "+header);
-            System.out.println("map: "+map);*/
+            System.out.println("url: "+url+"\n"+"header: "+header);
+            //System.out.println("map: "+map);
             return HttpMethods.doPost(url,map,header);
         } catch (Exception e) {
             e.printStackTrace();

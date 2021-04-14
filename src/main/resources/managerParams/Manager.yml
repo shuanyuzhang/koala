@@ -23,9 +23,9 @@ demand_create: #测试场景
     content-type: multipart/form-data; boundary=----WebKitFormBoundaryJtg6MAyiGs6gAVZl
     authorization: 6a4deaae9e6ac5e15cfc1a07374d311b
   params:  #传参(json)
-      "shop_id": 287
-      "shop_sn": "E0010000150287"
-      "location": {"type":"Point","coordinates":[116.306295,40.053034]}
+      "shop_id": 255690
+      "shop_sn": "E0010000312255690"
+      "location": {"type":"Point","coordinates":[116.302956,40.055195]}
       "label_id": 55
       "label_name": "分拣员"
       "info": 1
@@ -33,14 +33,14 @@ demand_create: #测试场景
       "price_c": 22
       "person_num": 1
       "hours": 3
-      "address": "(在建)昌平线南延线;13号线;昌平线"
-      "area_id": 139
+      "address": "盈创动力园区A座北厅(上地东路1号院)"
+      "area_id": 291
       "city_id": 1
-      "business_id": 150
+      "business_id": 312
       "industry": 1
-      "start_date": "2021-04-30"
-      "start_time": 0
-      "end_time": 3
+      "start_date": "2021-04-07"
+      "start_time": 10
+      "end_time": 13
       "period": 1
 
 cancel_task:
