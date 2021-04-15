@@ -47,18 +47,17 @@ public class HttpMethods extends JsonMethods {
         }
     }
 
-    public static String doPost(String url,Map map,String header){
+    public static String doManagerPost(String url,Map map,String header){
         try {
             CloseableHttpClient httpClient = HttpClients.createDefault();
             HttpPost httpPost = new HttpPost(url);
-            if(header != null){
+            /*if(header != null){
                 httpPost.addHeader("authorization",header);
-            }
+            }*/
             List<NameValuePair> params = new ArrayList<>();
            for(Object o : map.keySet()){
                params.add(new BasicNameValuePair(o.toString(),map.get(o).toString()));
            }
-
             UrlEncodedFormEntity formEntity = new UrlEncodedFormEntity(params,"UTF-8");
             httpPost.setEntity(formEntity);
             CloseableHttpResponse response = httpClient.execute(httpPost);
@@ -71,9 +70,7 @@ public class HttpMethods extends JsonMethods {
         }
     }
 
-    public String getToken(){
-        return this.token;
-    }
+
 
     public String doPostyuanlaide (String url, Map map,String token){
         url = getHost() + url;

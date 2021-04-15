@@ -4,13 +4,15 @@ import com.alibaba.fastjson.JSONObject;
 import com.google.gson.JsonObject;
 import lombok.Data;
 
+import java.util.Map;
+
 @Data
 public class HttpEntity {
     //请求
     String url;
     String method;
     String headers;
-    String params;
+    Map params;
 
     //响应
     int code;

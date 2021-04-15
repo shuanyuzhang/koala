@@ -13,8 +13,8 @@ login:
   headers:
     content-type: multipart/form-data; boundary=----WebKitFormBoundary4LkcLZBR0NQnj6WS
   params:
-    username: "admin"
-    password: "123456"
+    username: "admin2"
+    password: "1234567"
 
 demand_create: #测试场景
   url: https://test-manager.zhongfuyun.com/api/demand/save #接口地址
