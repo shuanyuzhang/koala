@@ -51,9 +51,9 @@ public class HttpMethods extends JsonMethods {
         try {
             CloseableHttpClient httpClient = HttpClients.createDefault();
             HttpPost httpPost = new HttpPost(url);
-            /*if(header != null){
+            if(header != null && url.contains("/api/login")){
                 httpPost.addHeader("authorization",header);
-            }*/
+            }
             List<NameValuePair> params = new ArrayList<>();
            for(Object o : map.keySet()){
                params.add(new BasicNameValuePair(o.toString(),map.get(o).toString()));

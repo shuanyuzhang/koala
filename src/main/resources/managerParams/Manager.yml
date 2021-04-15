@@ -45,6 +45,7 @@ demand_create: #测试场景
 
 cancel_task:
   url: https://test-manager.zhongfuyun.com/api/task/cancel
+  method: POST
   params:
     sn: TB032200074946
     reason_id: 16

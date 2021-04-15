@@ -15,13 +15,14 @@ public class AutoTools {
     public static void setApiEntity(String apiPath,Map paramsMap){
         try {
 
-            for(Object ss : paramsMap.entrySet()){
-                System.out.println(ss);
-            }
-
             String ss[] = apiPath.split("\\.");//后续优化
             //if(ss.length == 2){ //后续优化
             Map map = (Map)YamlReader.instance.getValueByKey(apiPath,ss[1]+".params");
+
+            for(Object k : paramsMap.keySet()){
+                map.put(k,paramsMap.get(k));
+                //System.out.println(k+"--->"+paramsMap.get(k));
+            }
             String url = YamlReader.instance.getValueByKey(apiPath,ss[1]+".url").toString();
             String header = YamlReader.instance.getValueByKey(apiPath,"demand_create.headers.authorization").toString();
             String method = YamlReader.instance.getValueByKey(apiPath,ss[1]+".method").toString();
