@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extentreports>
+    <configuration>
+        <theme>dark</theme>
+        <encoding>UTF-8</encoding>
+        <!--ResourceCDN.EXTENTREPORTS-->
+        <!--ResourceCDN.EXTENTREPORTS-->
+        <ResourceCDN>ResourceCDN.EXTENTREPORTS</ResourceCDN>
+        <documentTitle>Cucumber extent Reports</documentTitle>
+        <reportName>Koala Cucumber Reports--------------</reportName>
+        <!--<reportHeadline> - v1.0.0</reportHeadline>-->
+        <protocol>https</protocol>
+        <dateFormat>yyyy-MM-dd</dateFormat>
+        <timeFormat>HH:mm:ss</timeFormat>
+        <!--<listener class-name="Tools.ExtentTestngReporterListener" />-->
+        <!--<testViewChartLocation>bottom</testViewChartLocation>-->
+        <scripts>
+            <![CDATA[
+                $(document).ready(function() {
+
+                });
+            ]]>
+        </scripts>
+        <!-- custom styles -->
+        <styles>
+            <![CDATA[
+
+            ]]>
+        </styles>
+    </configuration>
+</extentreports>

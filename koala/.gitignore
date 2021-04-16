@@ -1,0 +1,17 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea/
+#.idea/.gitignore
+#.idea/artifacts/
+#.idea/compiler.xml
+#.idea/inspectionProfiles/
+#.idea/jarRepositories.xml
+#.idea/mavenProjectSettings.xml
+#.idea/misc.xml
+#.idea/uiDesigner.xml
+META-INF/
+koala.iml
+koala.jar
+#pom.xml
+#src/
+target/
+test-output/
