@@ -52,7 +52,7 @@ public class BeforeSet {
                     "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                     /*"--plugin",
                     "CucumberReport.ExtentCucumberAdapter:test-output",*/
-                    "src\\main\\resources\\features\\ManagerApi.feature"});
+                    "src/main/resources/features/ManagerApi.feature"});//"src\\main\\resources\\features\\ManagerApi.feature"
 
     }
 

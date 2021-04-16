@@ -47,7 +47,8 @@ public class YamlReader {
         try {
             Yaml yaml = new Yaml();
             String api[] = apiPath.split("\\."); //根据 . 去分割
-            String path = "src\\main\\resources\\managerParams\\" + api[0] + ".yml"; //得到yml文件
+            String path = "src/main/resources/managerParams/" + api[0] + ".yml"; //得到yml文件
+            //win  src\\main\\resources\\managerParams\\" + api[0] + ".yml"
             File directory = new File(path);
             InputStream inputStream = new FileInputStream(directory);
             Map map = (Map) yaml.load(inputStream); //文件转map  直接toString也可以
