@@ -1,0 +1,127 @@
+# 目前key不支持数字类型,输入的格式规范也要注意
+
+login:
+  url: $${host}/api/login
+  method: POST
+  headers:
+    content-type: multipart/form-data; boundary=----WebKitFormBoundary4LkcLZBR0NQnj6WS
+  params:
+    username: "admin2"
+    password: "1234567"
+
+demand_create_random: #测试场景-需求随机创建
+  url: $${host}/api/demand/save #接口地址
+  method: POST #请求方法
+  headers:
+    content-type: multipart/form-data; boundary=----WebKitFormBoundaryJtg6MAyiGs6gAVZl
+    authorization: 6a4deaae9e6ac5e15cfc1a07374d311b
+  params:  #form参数传递
+    shop_255690:
+      shop_id: 255690
+      shop_sn: "E0010000312255690"
+      location: {"type":"Point","coordinates":[116.302956,40.055195]}
+      label_id: 55
+      label_name: "分拣员"
+      info: 1
+      price_b: 22
+      price_c: 22
+      person_num: 2
+      hours: 8
+      address: "盈创动力园区A座北厅(上地东路1号院)"
+      area_id: 291
+      city_id: 1
+      business_id: 312
+      industry: 1
+      start_date: "2021-04-18"
+      start_time: 23.5
+      end_time: 7.5
+      period: 1
+    shop_251:
+      shop_id: 251
+      shop_sn: E0010000143251
+      location: {"type":"Point","coordinates":[116.3393,39.99267]}
+      label_id: 54
+      label_name: 餐厅保洁
+      info: "By Cucumber Random 西贝-中关村店"
+      price_b: 11
+      price_c: 10
+      person_num: 2
+      hours: 8
+      address: 优胜大厦
+      area_id: 142
+      city_id: 1
+      business_id: 312
+      industry: 1
+      start_date: "2021-04-18"
+      start_time: 23.5
+      end_time: 7.5
+      period: 1
+    shop_256:
+      shop_id: 306
+      shop_sn: E0010000143306
+      location: {"type":"Point","coordinates":[116.301392,40.050897]}
+      label_id: 54
+      label_name: 餐厅保洁
+      info: "By Cucumber Random 西贝新店"
+      price_b: 25
+      price_c: 24
+      person_num: 2
+      hours: 8
+      address: 上地十街10号
+      area_id: 139
+      city_id: 1
+      business_id: 143
+      industry: 1
+      start_date: "2021-04-18"
+      start_time: 23.5
+      end_time: 7.5
+      period: 1
+
+task_dispatching: #任务派工-待分配任务查询
+  url: $${host}/api/task/dispatching
+  method: POST
+  headers:
+    content-type: multipart/form-data; boundary=----WebKitFormBoundary4LkcLZBR0NQnj6WS
+  params:
+    pageSize: 20
+    page: 1
+    task_sn: ""
+    demand_sn: ""
+    staff_name: ""
+    mobile: ""
+    shop_id: ""#255690
+    area_id: ""#291
+    label_id: ""
+    time_type: 2
+    city_id: 1
+    start_time: "2021-04-20 00:00:00"#时间格式问题，区域，这里先变成string绕过去
+    end_time: "2021-04-19 23:59:00"
+    source: dispatch
+    status: 10,60
+    order: {"shop_id":1,"start_time":1}
+
+
+task_issued: #任务分配
+  url: $${host}/api/task/issued
+  method: POST #请求方法
+  headers:
+    content-type: multipart/form-data; boundary=----WebKitFormBoundaryJtg6MAyiGs6gAVZl
+    authorization: 6a4deaae9e6ac5e15cfc1a07374d311b
+  params:  #form参数传递
+    sn: TB041800080072
+    staff_sn: P000001018
+    staff_name: 章1018
+    staff_id: 1018
+    log_data: [{"id":974,"staff_sn":"P000000974","name":"苗水","mobile":"18601326954","staff_status":30,"gender":"female","birthday":"1993-02-02 00:00:00","level":2,"sign_info":{"apply_time":"2021-03-22 10:36:23","sign_pic":"images/161638058290489.png","audit_name":"超级管理员","signed_time":"2021-03-22 10:37:27"},"work_status":1,"job_times":{"Monday":[1,2,3,4],"Tuesday":[1,2,3,4],"Wednesday":[1,2,3,4],"Thursday":[1,2,3,4],"Friday":[1,2,3,4],"Saturday":[1,2,3,4],"Sunday":[]},"job_areas":[219,339,342],"job_types":[55,54,53,5,2],"job_status":1,"labels_platform":[],"certificate_health":{"city_id":1,"city_name":"北京","health_sn":"22588","expire_time":"2022-02-05 00:00:00","front_pic":"images/1612523114582143.png","back_pic":"images/161638061527780.png","last_time":"2021-03-22 10:36:59"},"certificate_health_status":1,"nationality":"汉","address":"北京市北京市昌平区百沙路200号","detailed_address":"4层4012","location":{"type":"Point","coordinates":[116.29186,40.149406]},"work_type":1,"free_time":[],"is_set":1,"work_hours":0,"free_hours":0,"task_hours":0,"task_times":[],"task_num":0,"taskinfo":[],"score":54,"score_desc":["店铺7天内服务次数27","7天前累计出工次数4","周可出工天数9","出工时段10","员工等级4"],"work_date":"2021-04-19","newPeople":2,"age":28},{"id":1018,"staff_sn":"P000001018","name":"章1018","mobile":"13691541102","staff_status":30,"gender":"male","birthday":"1993-01-02 00:00:00","level":1,"sign_info":{"apply_time":"2021-03-16 16:21:46","sign_pic":"images/161588290357286.png","audit_name":"超级管理员","signed_time":"2021-03-16 16:31:41"},"work_status":1,"job_times":{"Monday":[2],"Tuesday":[1,2,3,4],"Wednesday":[1,2,3,4],"Thursday":[],"Friday":[],"Saturday":[],"Sunday":[]},"job_areas":[342,219,144],"job_types":[5,2],"job_status":1,"labels_platform":[],"certificate_health":{"city_id":1,"city_name":"北京","health_sn":"2","expire_time":"2021-03-16 00:00:00","front_pic":"images/16158834793641.png","back_pic":"images/1615883485183103.png","last_time":"2021-03-16 16:31:29"},"certificate_health_status":1,"nationality":"汉","address":"北京市北京市海淀区上地十街10号百度大厦","detailed_address":"","location":{"type":"Point","coordinates":[116.30095,40.051632]},"work_type":1,"free_time":[["10:00","14:59"]],"is_set":2,"work_hours":18000,"free_hours":18000,"task_hours":0,"task_times":[],"task_num":0,"taskinfo":[],"score":35,"score_desc":["店铺7天内服务次数22","7天前累计出工次数7","周可出工天数4","出工时段0","员工等级2"],"work_date":"2021-04-19","newPeople":2,"age":28},{"id":794,"staff_sn":"P000000794","name":"魏利民","mobile":"15313759467000","staff_status":30,"gender":"male","birthday":"1996-09-04 00:00:00","level":1,"sign_info":{"apply_time":"2020-12-29 11:09:12","sign_pic":"images/1609211347236145.png","audit_name":"超级管理员","signed_time":"2020-12-29 11:17:43","fail_reason":"undefined"},"work_status":1,"job_times":{"Monday":[],"Tuesday":[2],"Wednesday":[],"Thursday":[],"Friday":[],"Saturday":[],"Sunday":[]},"job_areas":[342,231,219,144,142,139],"job_types":[54,53,5,2],"job_status":1,"labels_platform":[59,60,66,70,71],"certificate_health":{"city_id":1,"city_name":"北京","health_sn":"2356899","expire_time":"2021-12-29 00:00:00","front_pic":"images/1609211559190140.png","back_pic":"images/1609211579543113.png","last_time":"2020-12-29 11:13:06"},"certificate_health_status":1,"nationality":"满","address":"北京市北京市大兴区","detailed_address":"测试110室","location":{"type":"Point","coordinates":[116.504974,39.799427]},"work_type":1,"free_time":[],"is_set":2,"work_hours":0,"free_hours":0,"task_hours":0,"task_times":[],"task_num":0,"taskinfo":[],"score":15,"score_desc":["店铺7天内服务次数0","7天前累计出工次数13","周可出工天数0","出工时段0","员工等级2"],"work_date":"2021-04-19","newPeople":2,"age":24},{"id":901,"staff_sn":"P000000901","name":"章0000","mobile":"13691541103","staff_status":30,"gender":"male","birthday":"1993-01-02 00:00:00","level":1,"sign_info":{"apply_time":"2021-02-02 18:42:16","sign_pic":"images/1612262533987103.png","audit_name":"超级管理员","signed_time":"2021-02-02 18:43:14"},"work_status":1,"job_times":{"Monday":[1,2,3,4],"Tuesday":[1,2,3,4],"Wednesday":[1,2,3,4],"Thursday":[],"Friday":[],"Saturday":[],"Sunday":[]},"job_areas":[342,231,139],"job_types":[55,54,2],"job_status":1,"labels_platform":[],"certificate_health":{"city_id":1,"city_name":"北京","health_sn":"5","expire_time":"2021-04-02 00:00:00","front_pic":"images/161226256398180.png","back_pic":"images/1612262567799115.png","last_time":"2021-02-02 18:42:53"},"certificate_health_status":1,"nationality":"汉","address":"北京市北京市海淀区信息路甲9号","detailed_address":"","location":{"type":"Point","coordinates":[116.30283,40.055286]},"work_type":1,"free_time":[["05:00","09:59"],["10:00","14:59"],["15:00","21:59"],["22:00","04:59"]],"is_set":2,"work_hours":86400,"free_hours":86400,"task_hours":0,"task_times":[],"task_num":0,"taskinfo":[],"score":9,"score_desc":["店铺7天内服务次数0","7天前累计出工次数3","周可出工天数4","出工时段0","员工等级2"],"work_date":"2021-04-19","newPeople":2,"age":28},{"id":995,"staff_sn":"P000000995","name":"苗水华成","mobile":"186013269544","staff_status":30,"gender":"female","birthday":"1993-02-02 00:00:00","level":1,"sign_info":{"apply_time":"2021-04-14 17:24:53","sign_pic":"images/161839229472796.png","audit_name":"超级管理员","signed_time":"2021-04-14 17:26:00"},"work_status":1,"job_times":{"Monday":[1,2,3,4],"Tuesday":[1,2,3,4],"Wednesday":[1,2,3,4],"Thursday":[1,2,3,4],"Friday":[],"Saturday":[],"Sunday":[]},"job_areas":[342],"job_types":[55,5],"job_status":1,"labels_platform":[],"certificate_health":{"city_id":0,"city_name":"","health_sn":"","expire_time":"0000-00-00 00:00:00","front_pic":"","back_pic":"","last_time":"0000-00-00 00:00:00"},"certificate_health_status":2,"nationality":"汉","address":"","detailed_address":"","location":[],"work_type":1,"free_time":[["05:00","09:59"],["10:00","14:59"],["15:00","21:59"],["22:00","04:59"]],"is_set":2,"work_hours":86400,"free_hours":86400,"task_hours":0,"task_times":[],"task_num":0,"taskinfo":[],"score":9,"score_desc":["店铺7天内服务次数0","7天前累计出工次数1","周可出工天数6","出工时段0","员工等级2"],"work_date":"2021-04-19","newPeople":1,"age":28}]
+
+cancel_task:
+  url: $${host}/api/task/cancel
+  method: POST
+  params:
+    sn: TB032200074946
+    reason_id: 16
+
+
+
+
+

@@ -2,9 +2,11 @@ package ReportSet;
 
 //import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 //import com.aventstack.extentreports.reporter.configuration.ResourceCDN;
+
+import constant.Constants;
 import cucumber.api.cli.Main;
 
-        import java.text.SimpleDateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class BeforeSet {
@@ -15,17 +17,16 @@ public class BeforeSet {
         test.log(Status.DEBUG, m);
     }*/
 
-    public static String getReport(){
+    public static String getReport() {
         try {
 
             //ExtentReports extent = new ExtentReports();
             //extent.setGherkinDialect("zh-CN");//解决地方语言问题
-            SimpleDateFormat fmt  = new SimpleDateFormat("yyyy&MM&dd HH-mm-ss-SSS"); //精确到毫秒
+            SimpleDateFormat fmt = new SimpleDateFormat("yyyy&MM&dd HH-mm-ss-SSS"); //精确到毫秒
             String suffix = fmt.format(new Date());
 
             /*ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter("target\\report\\report.html");
             htmlReporter.config().setResourceCDN(ResourceCDN.EXTENTREPORTS);*/
-
 
             //System.setProperty("extent.reporter.html.start", "true");
             //System.setProperty("extent.reporter.html.out", "test-output\\extentReport\\HtmlReport.html");
@@ -38,30 +39,31 @@ public class BeforeSet {
         }
     }
 
-    public static void cuEntry() throws Throwable {
+    public static void cuEntry(String env) {
+        env = env.trim().replace(" ","");
 
-            Main.main(new String[]{"--glue",
-                    "JavaSteps",
-                    "--plugin",
-                    "rerun:target/rerun.txt",
-                    "--plugin",
-                    "pretty",
-                    "--plugin",
-                    "html:test-output\\cucumberReport",
-                    "--plugin",
-                    "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-                    /*"--plugin",
-                    "CucumberReport.ExtentCucumberAdapter:test-output",*/
-                    "src/main/resources/features/ManagerApi.feature"});//"src\\main\\resources\\features\\ManagerApi.feature"
+        if(env.equals("test-manager") || env.equals("pre-manager") || env.equals("manager")){
+            Constants.env = "src\\main\\resources\\env\\" + env + ".properties";
+        }else{
+            System.out.println("no env match,will be use default env.");
+        }
+
+        Main.main(new String[]{"--glue",
+                "JavaSteps",
+                "--plugin",
+                "rerun:target/rerun.txt",
+                "--plugin",
+                "pretty",
+                "--plugin",
+                "html:test-output\\cucumberReport",
+                "--plugin",
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
+                /*"--plugin",
+                "CucumberReport.ExtentCucumberAdapter:test-output",*/
+                "src/main/resources/features/manager/ManagerApi.feature"});//"src\\main\\resources\\features\\ManagerApi.feature"
 
     }
 
-    public static void main(String[] args) throws Throwable {
-        BeforeSet.getReport();
-        BeforeSet.cuEntry();
-
-        
-    }
 
 
         /*System.setProperty("extent.reporter.html.out", "G:\\UI_Test_src\\ApiGroup\\target\\extent-report\\1.html");
@@ -70,7 +72,7 @@ public class BeforeSet {
         args1[1] = "HttpFeature";
         *//*args1[2] = "-p";
         args1[3] = "html:target/1.html";*//*
-        *//*args1[4] = "-p";
+     *//*args1[4] = "-p";
         args1[5] = "pretty";*//*
         args1[2] = "-p";
         args1[3] = "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:target/1.html";

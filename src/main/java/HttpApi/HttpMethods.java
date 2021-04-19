@@ -1,5 +1,6 @@
 package HttpApi;
 
+import Utils.JsonMethods;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -26,7 +27,7 @@ public class HttpMethods extends JsonMethods {
     public String getHost(){
         try {
             Properties prop = new Properties();
-            String propName= "src\\main\\resources\\ApiInfo\\api-config.properties";
+            String propName= "src\\main\\resources\\ApiInfo\\test-manager.properties";
             prop.load(new FileInputStream(propName));
             String host = prop.getProperty("host");
             return host;
@@ -51,8 +52,8 @@ public class HttpMethods extends JsonMethods {
         try {
             CloseableHttpClient httpClient = HttpClients.createDefault();
             HttpPost httpPost = new HttpPost(url);
-            if(header != null && !url.contains("/api/login")){
-                httpPost.addHeader("authorization",header);
+            if(header != null || !url.contains("/api/login")){
+                httpPost.addHeader("authorization","6a4deaae9e6ac5e15cfc1a07374d311b");
             }
             List<NameValuePair> params = new ArrayList<>();
            for(Object o : map.keySet()){

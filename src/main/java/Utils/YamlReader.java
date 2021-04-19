@@ -47,7 +47,7 @@ public class YamlReader {
         try {
             Yaml yaml = new Yaml();
             String api[] = apiPath.split("\\."); //根据 . 去分割
-            String path = "src/main/resources/managerParams/" + api[0] + ".yml"; //得到yml文件
+            String path = "src/main/resources/apis/" + api[0] + ".yml"; //得到yml文件
             //win  src\\main\\resources\\managerParams\\" + api[0] + ".yml"
             File directory = new File(path);
             InputStream inputStream = new FileInputStream(directory);
@@ -87,5 +87,6 @@ public class YamlReader {
             System.out.println("v = "+serverHost.get(o));
         }
 
+        System.out.println(serverHost.size());
     }
 }

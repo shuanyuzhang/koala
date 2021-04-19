@@ -12,9 +12,11 @@ public class HttpExcute {
     public static String excute(){
         if(Constants.httpEntity.getMethod().equals("POST")){
             String ss = HttpMethods.doManagerPost(Constants.httpEntity.getUrl(),Constants.httpEntity.getParams(),Constants.httpEntity.getHeaders());
-            Constants.respone = ss;
+            Constants.response = ss;
             System.out.println(ss);
             return ss;
+        }else if(Constants.httpEntity.getMethod().equals("GET")){
+
         }
         return null;
     }
