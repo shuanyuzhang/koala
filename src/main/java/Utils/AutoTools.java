@@ -31,7 +31,7 @@ public class AutoTools {
             }
 
             //根据需要，赋值公共参数map
-            setManagerContantsMap(map,arg[1]);
+            //setManagerContantsMap(map,arg[1]);
 
             //处理用例自定义输入的参数
             for (Object k : paramsMap.keySet()) {

@@ -16,66 +16,86 @@ demand_create_random: #测试场景-需求随机创建
     content-type: multipart/form-data; boundary=----WebKitFormBoundaryJtg6MAyiGs6gAVZl
     authorization: 6a4deaae9e6ac5e15cfc1a07374d311b
   params:  #form参数传递
-    shop_255690:
-      shop_id: 255690
-      shop_sn: "E0010000312255690"
-      location: {"type":"Point","coordinates":[116.302956,40.055195]}
-      label_id: 55
-      label_name: "分拣员"
-      info: 1
-      price_b: 22
-      price_c: 22
-      person_num: 2
-      hours: 8
-      address: "盈创动力园区A座北厅(上地东路1号院)"
-      area_id: 291
-      city_id: 1
-      business_id: 312
-      industry: 1
-      start_date: "2021-04-18"
-      start_time: 23.5
-      end_time: 7.5
-      period: 1
-    shop_251:
-      shop_id: 251
-      shop_sn: E0010000143251
-      location: {"type":"Point","coordinates":[116.3393,39.99267]}
-      label_id: 54
-      label_name: 餐厅保洁
-      info: "By Cucumber Random 西贝-中关村店"
-      price_b: 11
-      price_c: 10
-      person_num: 2
-      hours: 8
-      address: 优胜大厦
-      area_id: 142
-      city_id: 1
-      business_id: 312
-      industry: 1
-      start_date: "2021-04-18"
-      start_time: 23.5
-      end_time: 7.5
-      period: 1
-    shop_256:
-      shop_id: 306
-      shop_sn: E0010000143306
-      location: {"type":"Point","coordinates":[116.301392,40.050897]}
-      label_id: 54
-      label_name: 餐厅保洁
-      info: "By Cucumber Random 西贝新店"
+    shop_295: #线上 巫山烤全鱼
+      shop_id: 295
+      shop_sn: E0010000153295
+      location: {"type":"Point","coordinates":[117.170768,40.254788]}
+      label_id: 5
+      label_name: 服务员
+      info: "线上 巫山烤全鱼"
       price_b: 25
-      price_c: 24
+      price_c: 21
       person_num: 2
       hours: 8
-      address: 上地十街10号
-      area_id: 139
+      address: 胡熊路
+      area_id: 254
       city_id: 1
-      business_id: 143
+      business_id: 153
       industry: 1
-      start_date: "2021-04-18"
+      start_date: "2021-04-19"
       start_time: 23.5
       end_time: 7.5
       period: 1
+#    shop_255690:
+#      shop_id: 255690
+#      shop_sn: "E0010000312255690"
+#      location: {"type":"Point","coordinates":[116.302956,40.055195]}
+#      label_id: 55
+#      label_name: "分拣员"
+#      info: "By Cucumber Random 新建b店"
+#      price_b: 22
+#      price_c: 22
+#      person_num: 2
+#      hours: 8
+#      address: "盈创动力园区A座北厅(上地东路1号院)"
+#      area_id: 291
+#      city_id: 1
+#      business_id: 312
+#      industry: 1
+#      start_date: "2021-04-19"
+#      start_time: 23.5
+#      end_time: 7.5
+#      period: 116
+#    shop_251:
+#      shop_id: 251
+#      shop_sn: E0010000143251
+#      location: {"type":"Point","coordinates":[116.3393,39.99267]}
+#      label_id: 54
+#      label_name: 餐厅保洁
+#      info: "By Cucumber Random 西贝-中关村店"
+#      price_b: 11
+#      price_c: 10
+#      person_num: 2
+#      hours: 8
+#      address: 优胜大厦
+#      area_id: 142
+#      city_id: 1
+#      business_id: 312
+#      industry: 1
+#      start_date: "2021-04-17"
+#      start_time: 23.5
+#      end_time: 7.5
+#      period: 1
+#    shop_256:
+#      shop_id: 306
+#      shop_sn: E0010000143306
+#      location: {"type":"Point","coordinates":[116.301392,40.050897]}
+#      label_id: 54
+#      label_name: 餐厅保洁
+#      info: "By Cucumber Random 西贝新店"
+#      price_b: 25
+#      price_c: 24
+#      person_num: 2
+#      hours: 8
+#      address: 上地十街10号
+#      area_id: 139
+#      city_id: 1
+#      business_id: 143
+#      industry: 1
+#      start_date: "2021-04-18"
+#      start_time: 23.5
+#      end_time: 7.5
+#      period: 1
 
 task_dispatching: #任务派工-待分配任务查询
   url: $${host}/api/task/dispatching

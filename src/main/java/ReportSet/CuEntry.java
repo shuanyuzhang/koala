@@ -7,6 +7,7 @@ public class CuEntry {
 
     public static void main(String[] args) throws Throwable {
         //BeforeSet.getReport();
-        BeforeSet.cuEntry("test-manager");
+        //BeforeSet.cuEntry("test-manager");
+        BeforeSet.cuEntry("pre-manager");
     }
 }
